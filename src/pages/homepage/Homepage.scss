@@ -1,0 +1,40 @@
+.gaia-homepage {
+  max-width: 100vw;
+  max-height: 93vh;
+  padding: 3rem;
+  .want-to-know-more {
+    border: 1px solid black;
+    background-color: lightgrey;
+    width: calc(100% - 3rem);
+
+    .square-cards {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      .square-card {
+        width: 8rem;
+        height: 8rem;
+        line-height: 1.5rem;
+        background-color: white;
+        border: 1px solid black;
+        text-align: center;
+        p {
+          margin: 1rem;
+        }
+      }
+    }
+
+    .graphs {
+      display: grid;
+      width: 100%;
+      height: 60vh;
+      grid-template-columns: 1fr 1fr;
+      .graph-container {
+        position: relative;
+        height: inherit;
+        width: inherit;
+      }
+    }
+  }
+}

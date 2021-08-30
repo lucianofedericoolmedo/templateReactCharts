@@ -1,0 +1,14 @@
+.app {
+  position: relative;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-rows: 6vh 94vh;
+  grid-template-areas: "header" "content";
+  .gaia-app-header {
+    grid-area: header;
+  }
+  .gaia-app-content {
+    grid-area: content;
+  }
+}
