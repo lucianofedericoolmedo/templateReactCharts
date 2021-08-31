@@ -74,44 +74,48 @@ export const Homepage = (props) => {
     <div className="gaia-homepage">
       <div className="want-to-know-more">
         <div className="want-to-know-more-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nunc mi,
-          interdum elementum velit a, rutrum suscipit magna. Duis ultrices
-          sapien ac viverra auctor. Cras pellentesque consequat aliquet. Ut
-          justo nulla, imperdiet sed ultricies ut, sollicitudin sed risus. Ut
-          euismod lacinia semper. Class aptent taciti sociosqu ad litora
-          torquent per conubia nostra, per inceptos himenaeos. Proin consectetur
-          justo quis ornare maximus. Sed quis maximus purus. Mauris consectetur,
-          ligula ac venenatis pharetra, dui neque rhoncus tortor, ut aliquam
-          tellus leo sit amet nibh.{" "}
+          <div className="TEMPORARY-REMOVE-LATER-ICON" />
+          <h2>Want to know more?</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nunc
+            mi, interdum elementum velit a, rutrum suscipit magna. Duis ultrices
+            sapien ac viverra auctor. Cras pellentesque consequat aliquet. Ut
+            justo nulla, imperdiet sed ultricies ut, sollicitudin sed risus. Ut
+            euismod lacinia semper. Class aptent taciti sociosqu ad litora
+            torquent per conubia nostra, per inceptos himenaeos. Proin
+            consectetur justo quis ornare maximus. Sed quis maximus purus.
+            Mauris consectetur, ligula ac venenatis pharetra, dui neque rhoncus
+            tortor, ut aliquam tellus leo sit amet nibh.
+          </p>
         </div>
         <div className="square-cards">
           <div className="square-card">
-            <p>Organics Leads Value</p>
-            <p>12345678</p>
+            <p className="square-card-title">Organics Leads Value</p>
+            <p className="square-card-value">12345678</p>
           </div>
           <div className="square-card">
-            <p>Organics Leads Value</p>
-            <p>12345678</p>
+            <p className="square-card-title">Organics Leads Value</p>
+            <p className="square-card-value">12345678</p>
           </div>
           <div className="square-card">
-            <p>Organics Leads Value</p>
-            <p>12345678</p>
+            <p className="square-card-title">Organics Leads Value</p>
+            <p className="square-card-value">12345678</p>
           </div>
           <div className="square-card">
-            <p>Organics Leads Value</p>
-            <p>12345678</p>
+            <p className="square-card-title">Organics Leads Value</p>
+            <p className="square-card-value">12345678</p>
           </div>
           <div className="square-card">
-            <p>Organics Leads Value</p>
-            <p>12345678</p>
+            <p className="square-card-title">Organics Leads Value</p>
+            <p className="square-card-value">12345678</p>
           </div>
           <div className="square-card">
-            <p>Organics Leads Value</p>
-            <p>12345678</p>
+            <p className="square-card-title">Organics Leads Value</p>
+            <p className="square-card-value">12345678</p>
           </div>
           <div className="square-card">
-            <p>Organics Leads Value</p>
-            <p>12345678</p>
+            <p className="square-card-title">Hey!</p>
+            <p className="square-card-value">12345678</p>
           </div>
         </div>
         <div className="graphs">
