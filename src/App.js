@@ -1,12 +1,12 @@
 import "./App.scss";
-import { Homepage } from "./pages/homepage/Homepage";
+import { OptimizationAndPrediction } from "./pages/optimizationAndPrediction/OptimizationAndPrediction";
 import { Header } from "./pages/header/Header";
 
 function App() {
   return (
     <div className="app">
-      <Header className="gaia-app-header" />
-      <Homepage className="gaia-app-content" />
+      <Header className="app-header" />
+      <OptimizationAndPrediction className="gaia-app-content" />
     </div>
   );
 }

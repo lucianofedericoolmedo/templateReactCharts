@@ -1,0 +1,69 @@
+.want-to-know-more {
+  display: grid;
+  grid-template-columns: 5vw auto 5vw;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    ". want-to-know-more-text ."
+    " . square-cards ."
+    ". graphs .";
+  gap: 1rem;
+  border: 1px solid gray;
+
+  .want-to-know-more-text {
+    grid-area: want-to-know-more-text;
+    font-family: "Source Sans Pro";
+    .TEMPORARY-REMOVE-LATER-ICON {
+      width: 100px;
+      height: 100px;
+      background-color: lightgrey;
+      float: left;
+      margin: 0.5rem;
+    }
+    h2 {
+      margin: 0.5rem;
+      font-family: inherit;
+    }
+    p {
+      font-family: inherit;
+      text-align: center;
+      line-height: 1.3rem;
+    }
+  }
+  .square-cards {
+    grid-area: square-cards;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+    .square-card {
+      width: 7rem;
+      height: 7rem;
+      line-height: 1.5rem;
+      margin: 0.5rem;
+      text-align: center;
+      box-shadow: 3px 3px 10px 0.5px #888;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      .square-card-title {
+        font-weight: bold;
+        font-size: 0.9rem;
+        color: grey;
+        margin-top: 1rem;
+      }
+      .square-card-value {
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .graphs {
+    grid-area: graphs;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .graph-container {
+      position: relative;
+    }
+  }
+}
