@@ -61,7 +61,7 @@ export const WantToKnowMore = (props) => {
         borderWidth: 2,
       },
     },
-    responsive: true,
+    responsive: "true",
     plugins: {
       title: {
         display: true,
@@ -118,10 +118,10 @@ export const WantToKnowMore = (props) => {
       </div>
       <div className="graphs">
         <div className="graph-container">
-          <Bar data={data} options={options} responsive />
+          <Bar data={data} options={options} responsive="true" />
         </div>
         <div className="graph-container">
-          <PolarArea data={polarChartData} responsive />
+          <PolarArea data={polarChartData} responsive="true" />
         </div>
       </div>
     </div>

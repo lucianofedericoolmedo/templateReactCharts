@@ -8,57 +8,73 @@ export const OptimizationAndPrediction = (props) => {
       <div className="optimization-and-prediction">
         <div className="optimization-and-prediction-header">
           <h1>LOGO</h1>
-          <div className="datepicker-form">
-            <label for="cars">Forecast Dates</label>
-            <select name="cars" id="cars">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="mercedes">Mercedes</option>
-              <option value="audi">Audi</option>
+          <div className="dates-form">
+            <label htmlFor="forecast-date">Forecast Dates</label>
+            <select
+              className="forecast-dates-select"
+              name="forecast-date"
+              id="forecast-date"
+            >
+              <option value="next-quarter">Next Quarter</option>
+              <option value="next-year">Next Year</option>
+              <option value="something">Something</option>
+              <option value="custom">Custom</option>
             </select>
-            <p className="next-quarter">1234 - 5678</p>
-            <input type="date" />
+            <label htmlFor="start-date">Start Date</label>
+            <input
+              className="start-date-input"
+              type="date"
+              name="start-date"
+              id="start-date"
+            />
+            <label htmlFor="end-date">End Date</label>
+            <input
+              className="end-date-input"
+              type="date"
+              name="end-date"
+              id="end-date"
+            />
           </div>
         </div>
         <div className="budget-input">
-          <label for="budget">Budget:</label>
+          <label htmlFor="budget">Budget:</label>
           <input type="number" id="budget" name="budget" />
         </div>
         <section className="channelmix-lead-pred">
           <h2>ChannelMix Lead Pred</h2>
           <div className="input-card-list">
             <div className="input-card">
-              <label for="direct-mail">Direct Mail</label>
+              <label htmlFor="direct-mail">Direct Mail</label>
               <input type="number" id="direct-mail" name="direct-mail" />
               <p>Optimized suggestion:</p>
               <button>1234</button>
             </div>
             <div className="input-card">
-              <label for="direct-mail2">Direct Mail</label>
+              <label htmlFor="direct-mail2">Direct Mail</label>
               <input type="number" id="direct-mail2" name="direct-mail2" />
               <p>Optimized suggestion:</p>
               <button>1234</button>
             </div>
             <div className="input-card">
-              <label for="direct-mail3">Direct Mail</label>
+              <label htmlFor="direct-mail3">Direct Mail</label>
               <input type="number" id="direct-mail3" name="direct-mail3" />
               <p>Optimized suggestion:</p>
               <button>1234</button>
             </div>
             <div className="input-card">
-              <label for="direct-mail4">Direct Mail</label>
+              <label htmlFor="direct-mail4">Direct Mail</label>
               <input type="number" id="direct-mail4" name="direct-mail4" />
               <p>Optimized suggestion:</p>
               <button>1234</button>
             </div>
             <div className="input-card">
-              <label for="direct-mail5">Direct Mail</label>
+              <label htmlFor="direct-mail5">Direct Mail</label>
               <input type="number" id="direct-mail5" name="direct-mail5" />
               <p>Optimized suggestion:</p>
               <button>1234</button>
             </div>
             <div className="input-card">
-              <label for="direct-mail6">Direct Mail</label>
+              <label htmlFor="direct-mail6">Direct Mail</label>
               <input type="number" id="direct-mail6" name="direct-mail6" />
               <p>Optimized suggestion:</p>
               <button>1234</button>
