@@ -1,5 +1,6 @@
 import React from "react";
 import { Bar, PolarArea } from "react-chartjs-2";
+import { lightbulb } from "../../icons/icons";
 import "./WantToKnowMore.scss";
 
 export const WantToKnowMore = (props) => {
@@ -10,13 +11,13 @@ export const WantToKnowMore = (props) => {
         label: "# of Votes",
         data: [12, 19, 3, 5, 2, 3, 15],
         backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-          "rgba(0, 0, 0, 0.2)",
+          "rgba(255, 99, 132, 0.5)",
+          "rgba(54, 162, 235, 0.5)",
+          "rgba(255, 206, 86, 0.5)",
+          "rgba(75, 192, 192, 0.5)",
+          "rgba(153, 102, 255, 0.5)",
+          "rgba(255, 159, 64, 0.5)",
+          "rgba(0, 0, 0, 0.5)",
         ],
         borderColor: [
           "rgba(255, 99, 132, 1)",
@@ -37,7 +38,7 @@ export const WantToKnowMore = (props) => {
     datasets: [
       {
         label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
+        data: [12, 19, 3, 5, 2, 3, 15],
         backgroundColor: [
           "rgba(255, 99, 132, 0.5)",
           "rgba(54, 162, 235, 0.5)",
@@ -45,6 +46,16 @@ export const WantToKnowMore = (props) => {
           "rgba(75, 192, 192, 0.5)",
           "rgba(153, 102, 255, 0.5)",
           "rgba(255, 159, 64, 0.5)",
+          "rgba(0, 0, 0, 0.5)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+          "rgba(0, 0, 0, 1)",
         ],
         borderWidth: 1,
       },
@@ -54,25 +65,48 @@ export const WantToKnowMore = (props) => {
   const options = {
     aspectRatio: 1,
     indexAxis: "y",
-    // Elements options apply to all of the options unless overridden in a dataset
-    // In this case, we are setting the border of each horizontal bar to be 2px wide
-    elements: {
-      bar: {
-        borderWidth: 2,
-      },
-    },
     responsive: "true",
     plugins: {
+      legend: {
+        labels: {
+          font: {
+            family: "Azeret Mono",
+          },
+        },
+      },
       title: {
         display: true,
         text: "Chart.js Horizontal Bar Chart",
+        font: {
+          family: "Azeret Mono",
+        },
+      },
+    },
+  };
+
+  const polarAreaOptions = {
+    responsive: "true",
+    plugins: {
+      legend: {
+        labels: {
+          font: {
+            family: "Azeret Mono",
+          },
+        },
+      },
+      title: {
+        display: true,
+        text: "Chart.js Polar Area Chart",
+        font: {
+          family: "Azeret Mono",
+        },
       },
     },
   };
   return (
     <div className="want-to-know-more">
       <div className="want-to-know-more-text">
-        <div className="TEMPORARY-REMOVE-LATER-ICON" />
+        <img className="lightbulb-icon" src={lightbulb} />
         <h2>Want to know more?</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nunc mi,
@@ -118,10 +152,10 @@ export const WantToKnowMore = (props) => {
       </div>
       <div className="graphs">
         <div className="graph-container">
-          <Bar data={data} options={options} responsive="true" />
+          <Bar data={data} options={options} />
         </div>
         <div className="graph-container">
-          <PolarArea data={polarChartData} responsive="true" />
+          <PolarArea data={polarChartData} options={polarAreaOptions} />
         </div>
       </div>
     </div>

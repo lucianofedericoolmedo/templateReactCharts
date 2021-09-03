@@ -7,7 +7,7 @@ export const OptimizationAndPrediction = (props) => {
     <div className="channel-spend-optimization-and-prediction-page">
       <div className="optimization-and-prediction">
         <div className="optimization-and-prediction-header">
-          <h1>LOGO</h1>
+          <h1>Logo</h1>
           <div className="dates-form">
             <label htmlFor="forecast-date">Forecast Dates</label>
             <select
