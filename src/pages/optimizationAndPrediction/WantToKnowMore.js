@@ -34,7 +34,7 @@ export const WantToKnowMore = (props) => {
   };
 
   const polarChartData = {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange", "Black"],
     datasets: [
       {
         label: "# of Votes",
@@ -67,13 +67,7 @@ export const WantToKnowMore = (props) => {
     indexAxis: "y",
     responsive: "true",
     plugins: {
-      legend: {
-        labels: {
-          font: {
-            family: "Azeret Mono",
-          },
-        },
-      },
+      legend: { display: false },
       title: {
         display: true,
         text: "Chart.js Horizontal Bar Chart",
@@ -106,7 +100,7 @@ export const WantToKnowMore = (props) => {
   return (
     <div className="want-to-know-more">
       <div className="want-to-know-more-text">
-        <img className="lightbulb-icon" src={lightbulb} />
+        <img className="lightbulb-icon" alt="lightbulb" src={lightbulb} />
         <h2>Want to know more?</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nunc mi,

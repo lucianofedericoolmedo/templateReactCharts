@@ -2,6 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 .channel-spend-optimization-and-prediction-page {
   //add padding here if you need some space to the sides
+  overflow: auto;
+  overflow-x: hidden; //i tried fixing that space to the side in mobiles without this and i couldnt make it work. Good luck if you gotta remove this!
+  padding: 2rem 3rem;
   .optimization-and-prediction {
     border: 1px solid grey;
     margin-bottom: 1rem;
@@ -12,7 +15,6 @@
       justify-content: space-evenly;
       align-items: center;
       flex-wrap: wrap;
-      border-bottom: 1px solid grey;
       margin-bottom: 1rem;
       h1 {
         //temporary styles
@@ -24,31 +26,29 @@
       .dates-form {
         flex-grow: 1;
         margin: 1rem;
-        display: grid;
-        grid-template-areas: "forecast-date-label start-date-label end-date-label" "forecast-date start-date end-date";
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
         label {
-          padding-left: 1rem;
-          height: 2rem;
-          line-height: 2rem;
-        }
-        .forecast-dates-select,
-        .start-date-input,
-        .end-date-input {
-          height: 2rem;
-          border: 1px solid grey;
-          border-radius: 3px;
-          background-color: white;
-          margin: 0 1rem;
-          cursor: pointer;
-        }
-        .forecast-dates-select {
-          grid-area: forecast-date;
-        }
-        .start-date-input {
-          grid-area: start-date;
-        }
-        .end-date-input {
-          grid-area: end-date;
+          flex-grow: 1;
+          display: grid;
+          grid-template-columns: 1fr;
+          h4 {
+            margin: 0;
+            padding: 0;
+          }
+          .forecast-dates-select,
+          .start-date-input,
+          .end-date-input {
+            height: 2rem;
+            border: 1px solid grey;
+            border-radius: 3px;
+            background-color: white;
+            margin: 0 1rem;
+            cursor: pointer;
+            text-align: center;
+          }
         }
       }
     }
@@ -59,20 +59,22 @@
       justify-content: center;
       border-bottom: 1px solid grey;
       margin-bottom: 1rem;
+      flex-wrap: wrap;
 
       label {
         width: max-content;
         margin-right: 1rem;
         font-size: 2rem;
+        margin-bottom: 0.5rem;
       }
       input {
         flex-grow: 1;
-        max-width: 50vw;
         height: 2rem;
         cursor: pointer;
         border-radius: 3px;
         border: 1px solid grey;
         background-color: white;
+        text-align: center;
       }
     }
     .channelmix-lead-pred {
@@ -107,6 +109,10 @@
             border-radius: 3px;
             border: 1px solid grey;
             background-color: white;
+            text-align: center;
+            &::before {
+              content: "$";
+            }
           }
           p {
             grid-area: text;
@@ -115,8 +121,8 @@
             line-height: 2rem;
             color: #477050;
             font-weight: bold;
-            text-decoration: underline #8ac575;
             margin-right: 0.5rem;
+            min-width: max-content;
           }
           button {
             grid-area: button;
@@ -133,12 +139,6 @@
             }
             &:active {
               background-color: #adb5bd;
-              // &::after {
-              //   content: "Copied!";
-              //   position: absolute;
-              //   top: -1.5rem;
-              //   left: 1.5rem;
-              // }
             }
           }
         }
@@ -146,12 +146,38 @@
       .prediction-buttons {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
         button {
           height: 15vh;
           font-size: 2rem;
           min-width: 12rem;
           cursor: pointer;
+          border-radius: 0;
+          border: none;
+          background-color: #0077b6;
+          color: white;
+          outline: 1px solid white;
+          transition: 0.1s ease;
+          &:hover,
+          &:focus {
+            background-color: #023e8a;
+            outline-offset: -0.5rem;
+            text-decoration: 1px underline white;
+          }
+          &:active {
+            background-color: #03045e;
+            outline-offset: -1rem;
+          }
+          &.run-optimization {
+            background-color: #38b000;
+            &:hover,
+            &:focus {
+              background-color: #008000;
+            }
+            &:active {
+              background-color: #007200;
+            }
+          }
         }
       }
       .predictions {
@@ -184,16 +210,21 @@
       }
       .prediction-and-optimization-details {
         width: 100%;
-        background-color: lightgrey;
-        margin-bottom: 1rem;
+        background-color: #262626;
+        color: white;
         cursor: pointer;
         summary {
           height: 3rem;
           line-height: 3rem;
-          padding: 0 1rem;
+          padding: 0 1rem 0 3rem;
           display: grid;
           //we have 4 columns because the 4th represents the arrow
           grid-template-columns: min-content min-content 1fr 1rem;
+
+          &:hover,
+          &:focus {
+            background-color: #363636;
+          }
 
           .timer {
             font-weight: bold;
@@ -217,26 +248,38 @@
             display: none;
           }
           &::after {
-            content: "►";
+            content: "▼";
+            transform: rotate(90deg);
+            transform-origin: 0.3rem 50%;
+            transition: 0.25s transform ease;
           }
         }
         .prediction-and-optimization-info {
           background-color: white;
+          color: black;
           line-height: 1.5rem;
           font-size: 1rem;
-          padding: 0 1rem;
+          padding: 1rem;
         }
         &[open] summary:after {
-          content: "▼";
+          transform: rotate(0deg);
         }
       }
     }
   }
 }
 
-summary::after {
-  content: " ►";
-}
-details[open] summary:after {
-  content: " ▼";
+@media screen and (max-width: 600px) {
+  .channel-spend-optimization-and-prediction-page {
+    padding: 0;
+    .optimization-and-prediction {
+      .channelmix-lead-pred {
+        .prediction-and-optimization-details {
+          summary {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
 }
