@@ -1,8 +1,14 @@
 import React from "react";
 import { WantToKnowMore } from "./WantToKnowMore";
+import Timer from "./Timer";
 import "./OptimizationAndPrediction.scss";
 
 export const OptimizationAndPrediction = (props) => {
+  // i left the minutes and the callback as consts so its easy to change it if need be
+  const minutesBetweenAutomaticUpdate = 5;
+  const timerCallback = () => {
+    console.log("timerCallback has been called");
+  };
   return (
     <div className="channel-spend-optimization-and-prediction-page">
       <div className="optimization-and-prediction">
@@ -88,7 +94,12 @@ export const OptimizationAndPrediction = (props) => {
           </div>
           <details className="prediction-and-optimization-details">
             <summary>
-              <p className="timer">5:00</p>
+              <Timer
+                initialMinute={minutesBetweenAutomaticUpdate}
+                initialSeconds={0}
+                timerCallback={timerCallback}
+                className="timer"
+              />
               <p className="timer-description">until next update</p>
               <p className="more-info-summary">More Info</p>
             </summary>
