@@ -91,20 +91,29 @@
           min-width: fit-content;
           margin: 1rem;
           display: grid;
-          grid-template-areas: "title title" "input input" "text button";
-          grid-template-columns: 2fr 1fr;
+          grid-template-areas: "title title" "formatted-value input" "text button";
+          grid-template-columns: 1fr 1fr;
+          gap: 0.5rem 1rem;
+
           label {
-            grid-area: title;
             height: 2rem;
             line-height: 2rem;
-            padding-left: 0.5rem;
             overflow: hidden;
             width: 100%;
+          }
+          .title {
+            grid-area: title;
+          }
+          .formatted-value {
+            grid-area: formatted-value;
+            text-align: right;
+            overflow: hidden;
+            max-width: 20ch;
+            text-overflow: ellipsis;
           }
           input {
             grid-area: input;
             height: 2rem;
-            margin: 0 0.5rem 1rem 1rem;
             cursor: pointer;
             border-radius: 3px;
             border: 1px solid grey;
@@ -117,18 +126,17 @@
           p {
             grid-area: text;
             text-align: center;
-            height: 2rem;
             line-height: 2rem;
             color: #477050;
             font-weight: bold;
             margin-right: 0.5rem;
-            min-width: max-content;
           }
           button {
             grid-area: button;
             border-radius: 3px;
             background-color: white;
-            border: 0;
+            border: 1px solid lightgray;
+            border-radius: 3px;
             font-weight: bold;
             font-size: 1rem;
             cursor: pointer;

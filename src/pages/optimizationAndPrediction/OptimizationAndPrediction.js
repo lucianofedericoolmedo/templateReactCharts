@@ -1,14 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import { WantToKnowMore } from "./WantToKnowMore";
 import Timer from "./Timer";
 import "./OptimizationAndPrediction.scss";
 
+function USDFormatter(number) {
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
+  // gotta love when JS has an in-built tool to handle this stuff
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(number);
+}
+
 export const OptimizationAndPrediction = (props) => {
+  const [inputCardData, setInputCardData] = useState({
+    input1: {
+      userValue: 0,
+      optimizedValue: 0,
+    },
+    input2: {
+      userValue: 0,
+      optimizedValue: 0,
+    },
+    input3: {
+      userValue: 0,
+      optimizedValue: 0,
+    },
+    input4: {
+      userValue: 0,
+      optimizedValue: 0,
+    },
+    input5: {
+      userValue: 0,
+      optimizedValue: 0,
+    },
+    input6: {
+      userValue: 0,
+      optimizedValue: 0,
+    },
+  });
   // i left the minutes and the callback as consts so its easy to change it if need be
   const minutesBetweenAutomaticUpdate = 5;
   const timerCallback = () => {
     console.log("timerCallback has been called");
   };
+  console.log("MainPage rendered");
   return (
     <div className="channel-spend-optimization-and-prediction-page">
       <div className="optimization-and-prediction">
@@ -56,38 +92,134 @@ export const OptimizationAndPrediction = (props) => {
           <h2>ChannelMix Lead Pred</h2>
           <div className="input-card-list">
             <div className="input-card">
-              <label htmlFor="direct-mail">Direct Mail</label>
-              <input type="number" id="direct-mail" name="direct-mail" />
+              <label htmlFor="direct-mail" className="title">
+                Direct Mail
+              </label>
+              <label htmlFor="direct-mail" className="formatted-value">
+                {USDFormatter(inputCardData.input1.userValue)}
+              </label>
+              <input
+                type="number"
+                id="direct-mail"
+                name="direct-mail"
+                value={inputCardData.input1.userValue}
+                onChange={(e) =>
+                  setInputCardData({
+                    ...inputCardData,
+                    input1: { userValue: e.target.value },
+                  })
+                }
+              />
               <p>Optimized suggestion:</p>
               <button onClick={() => window.alert(1234)}>1234</button>
             </div>
             <div className="input-card">
-              <label htmlFor="direct-mail2">Direct Mail</label>
-              <input type="number" id="direct-mail2" name="direct-mail2" />
+              <label htmlFor="direct-mail2" className="title">
+                Direct Mail
+              </label>
+              <label htmlFor="direct-mail2" className="formatted-value">
+                {USDFormatter(inputCardData.input2.userValue)}
+              </label>
+              <input
+                type="number"
+                id="direct-mail2"
+                name="direct-mail2"
+                value={inputCardData.input2.userValue}
+                onChange={(e) =>
+                  setInputCardData({
+                    ...inputCardData,
+                    input2: { userValue: e.target.value },
+                  })
+                }
+              />
               <p>Optimized suggestion:</p>
               <button onClick={() => window.alert(1234)}>1234</button>
             </div>
             <div className="input-card">
-              <label htmlFor="direct-mail3">Direct Mail</label>
-              <input type="number" id="direct-mail3" name="direct-mail3" />
+              <label htmlFor="direct-mail3" className="title">
+                Direct Mail
+              </label>
+              <label htmlFor="direct-mail3" className="formatted-value">
+                {USDFormatter(inputCardData.input3.userValue)}
+              </label>
+              <input
+                type="number"
+                id="direct-mail3"
+                name="direct-mail3"
+                value={inputCardData.input3.userValue}
+                onChange={(e) =>
+                  setInputCardData({
+                    ...inputCardData,
+                    input3: { userValue: e.target.value },
+                  })
+                }
+              />
               <p>Optimized suggestion:</p>
               <button onClick={() => window.alert(1234)}>1234</button>
             </div>
             <div className="input-card">
-              <label htmlFor="direct-mail4">Direct Mail</label>
-              <input type="number" id="direct-mail4" name="direct-mail4" />
+              <label htmlFor="direct-mail4" className="title">
+                Direct Mail
+              </label>
+              <label htmlFor="direct-mail4" className="formatted-value">
+                {USDFormatter(inputCardData.input4.userValue)}
+              </label>
+              <input
+                type="number"
+                id="direct-mail4"
+                name="direct-mail4"
+                value={inputCardData.input4.userValue}
+                onChange={(e) =>
+                  setInputCardData({
+                    ...inputCardData,
+                    input4: { userValue: e.target.value },
+                  })
+                }
+              />
               <p>Optimized suggestion:</p>
               <button onClick={() => window.alert(1234)}>1234</button>
             </div>
             <div className="input-card">
-              <label htmlFor="direct-mail5">Direct Mail</label>
-              <input type="number" id="direct-mail5" name="direct-mail5" />
+              <label htmlFor="direct-mail5" className="title">
+                Direct Mail
+              </label>
+              <label htmlFor="direct-mail5" className="formatted-value">
+                {USDFormatter(inputCardData.input5.userValue)}
+              </label>
+              <input
+                type="number"
+                id="direct-mail5"
+                name="direct-mail5"
+                value={inputCardData.input5.userValue}
+                onChange={(e) =>
+                  setInputCardData({
+                    ...inputCardData,
+                    input5: { userValue: e.target.value },
+                  })
+                }
+              />
               <p>Optimized suggestion:</p>
               <button onClick={() => window.alert(1234)}>1234</button>
             </div>
             <div className="input-card">
-              <label htmlFor="direct-mail6">Direct Mail</label>
-              <input type="number" id="direct-mail6" name="direct-mail6" />
+              <label htmlFor="direct-mail6" className="title">
+                Direct Mail
+              </label>
+              <label htmlFor="direct-mail6" className="formatted-value">
+                {USDFormatter(inputCardData.input6.userValue)}
+              </label>
+              <input
+                type="number"
+                id="direct-mail6"
+                name="direct-mail6"
+                value={inputCardData.input6.userValue}
+                onChange={(e) =>
+                  setInputCardData({
+                    ...inputCardData,
+                    input6: { userValue: e.target.value },
+                  })
+                }
+              />
               <p>Optimized suggestion:</p>
               <button onClick={() => window.alert(1234)}>1234</button>
             </div>
