@@ -39,6 +39,7 @@ export const OptimizationAndPrediction = (props) => {
       optimizedValue: 0,
     },
   });
+  const [dateRange, setDateRange] = useState({ minDate: "", maxDate: "" });
   // i left the minutes and the callback as consts so its easy to change it if need be
   const minutesBetweenAutomaticUpdate = 5;
   const timerCallback = () => {
@@ -71,6 +72,10 @@ export const OptimizationAndPrediction = (props) => {
                 type="date"
                 name="start-date"
                 id="start-date"
+                max={dateRange.maxDate}
+                onChange={(e) =>
+                  setDateRange({ ...dateRange, minDate: e.target.value })
+                }
               />
             </label>
             <label htmlFor="end-date">
@@ -80,6 +85,10 @@ export const OptimizationAndPrediction = (props) => {
                 type="date"
                 name="end-date"
                 id="end-date"
+                min={dateRange.minDate}
+                onChange={(e) =>
+                  setDateRange({ ...dateRange, maxDate: e.target.value })
+                }
               />
             </label>
           </div>
