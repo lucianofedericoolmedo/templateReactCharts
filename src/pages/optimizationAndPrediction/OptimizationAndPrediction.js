@@ -39,6 +39,7 @@ export const OptimizationAndPrediction = (props) => {
       optimizedValue: 0,
     },
   });
+  const [forecastDates, setForecastDates] = useState("");
   const [dateRange, setDateRange] = useState({ minDate: "", maxDate: "" });
   // i left the minutes and the callback as consts so its easy to change it if need be
   const minutesBetweenAutomaticUpdate = 5;
@@ -58,6 +59,7 @@ export const OptimizationAndPrediction = (props) => {
                 className="forecast-dates-select"
                 name="forecast-date"
                 id="forecast-date"
+                onChange={(e) => setForecastDates(e.target.value)}
               >
                 <option value="next-quarter">Next Quarter</option>
                 <option value="next-year">Next Year</option>
@@ -73,6 +75,7 @@ export const OptimizationAndPrediction = (props) => {
                 name="start-date"
                 id="start-date"
                 max={dateRange.maxDate}
+                disabled={forecastDates !== "custom"}
                 onChange={(e) =>
                   setDateRange({ ...dateRange, minDate: e.target.value })
                 }
@@ -86,6 +89,7 @@ export const OptimizationAndPrediction = (props) => {
                 name="end-date"
                 id="end-date"
                 min={dateRange.minDate}
+                disabled={forecastDates !== "custom"}
                 onChange={(e) =>
                   setDateRange({ ...dateRange, maxDate: e.target.value })
                 }
