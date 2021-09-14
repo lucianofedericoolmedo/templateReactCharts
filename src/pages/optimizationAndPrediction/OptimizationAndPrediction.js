@@ -249,9 +249,17 @@ export const OptimizationAndPrediction = (props) => {
               <p className="more-info-summary">More Info</p>
             </summary>
             <p className="prediction-and-optimization-info">
-              Epcot is a theme park at Walt Disney World Resort featuring
-              exciting attractions, international pavilions, award-winning
-              fireworks and seasonal special events.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              iaculis efficitur varius. Pellentesque habitant morbi tristique
+              senectus et netus et malesuada fames ac turpis egestas. Mauris
+              lacinia semper leo sed sodales. Phasellus aliquam tempus neque
+              vitae porta. Fusce consequat sem vitae iaculis cursus. Fusce
+              congue massa eget felis condimentum, id pretium lacus molestie.
+              Suspendisse eu urna commodo, mollis urna ut, facilisis magna.
+              Nulla facilisi. Phasellus eget elit metus. Donec eu tempor nisl.
+              Morbi nunc neque, facilisis ultricies eros non, vehicula
+              pellentesque leo. Mauris blandit eros dui, elementum volutpat odio
+              tempor at. Phasellus non mattis dolor.
             </p>
           </details>
           <div className="prediction-buttons">
